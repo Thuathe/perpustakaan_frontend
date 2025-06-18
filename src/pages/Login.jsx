@@ -28,9 +28,12 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-white to-purple-200">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-xl rounded-2xl">
-        <h2 className="text-2xl font-bold text-center text-gray-800">Login ke Akunmu</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 via-white to-purple-200">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-2xl rounded-3xl">
+        <h2 className="text-3xl font-bold tracking-tight text-center text-gray-800">
+          Selamat Datang di <br />Lvys Library
+        </h2>
+        <p className="text-sm text-center text-gray-500">Silakan login untuk melanjutkan</p>
         <form onSubmit={login} className="space-y-4">
           <input
             type="email"
@@ -38,7 +41,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
             required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <input
             type="password"
@@ -46,11 +49,11 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+            className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
           />
           <button
             type="submit"
-            className="w-full py-2 font-semibold text-white transition bg-purple-600 rounded-lg hover:bg-purple-700"
+            className="w-full py-2 font-semibold text-white transition duration-300 bg-purple-600 rounded-lg hover:bg-purple-700"
           >
             Login
           </button>
@@ -61,6 +64,14 @@ export default function Login() {
             Daftar disini
           </Link>
         </p>
+      </div>
+
+      {/* Footer Credit */}
+      <div className="mt-6 text-sm text-center text-gray-600">
+        Dibuat dengan 💜 oleh{" "}
+        <span className="font-semibold tracking-wide text-purple-700 cursor-pointer hover:underline">
+          Lvy S. – Pembawa Cahaya Web
+        </span>
       </div>
     </div>
   );
