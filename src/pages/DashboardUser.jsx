@@ -21,37 +21,39 @@ export default function DashboardUser() {
   };
 
   return (
-    <div className="min-h-screen px-4 py-10 bg-gray-100">
-      <div className="max-w-5xl p-6 mx-auto bg-white shadow-lg rounded-xl">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">📚 Daftar Buku</h2>
+    <div className="min-h-screen px-4 py-10 bg-gradient-to-br from-gray-50 via-purple-50 to-white">
+      <div className="max-w-6xl p-6 mx-auto bg-white border border-purple-100 shadow-xl rounded-3xl">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl font-bold text-purple-700">📚 Daftar Buku</h2>
           <button
             onClick={handleLogout}
-            className="px-4 py-2 text-sm font-semibold text-white transition bg-red-500 rounded-lg hover:bg-red-600"
+            className="px-5 py-2 text-sm font-medium text-white bg-red-500 rounded-full shadow hover:bg-red-600"
           >
             Logout
           </button>
         </div>
 
         {books.length === 0 ? (
-          <p className="text-center text-gray-500">Belum ada buku tersedia.</p>
+          <p className="italic text-center text-gray-500">Belum ada buku tersedia.</p>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
             {books.map(book => (
               <div
                 key={book.id}
-                className="overflow-hidden transition bg-white border shadow-md rounded-xl hover:shadow-lg"
+                className="overflow-hidden transition bg-white border border-purple-100 shadow rounded-2xl hover:shadow-md"
               >
                 {book.cover && (
-                  <img
-                    src={book.cover}
-                    alt={book.title}
-                    className="object-cover w-full h-48"
-                  />
+                  <div className="w-full overflow-hidden aspect-square">
+                    <img
+                      src={book.cover}
+                      alt={book.title}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
                 )}
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-800">{book.title}</h3>
-                  <p className="text-sm text-gray-600">Penulis: {book.author}</p>
+                  <h3 className="text-lg font-bold text-gray-800">{book.title}</h3>
+                  <p className="mt-1 text-sm text-gray-600">✍️ {book.author}</p>
                 </div>
               </div>
             ))}
