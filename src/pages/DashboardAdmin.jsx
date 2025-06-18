@@ -163,13 +163,15 @@ export default function DashboardAdmin() {
               key={book.id}
               className="overflow-hidden bg-white border shadow-md rounded-xl"
             >
-              {book.cover && (
-                <img
-                  src={book.cover}
-                  alt="cover"
-                  className="object-cover w-full h-48"
-                />
-              )}
+  <div className="relative w-full pt-[100%] bg-gray-100">
+  {book.cover && (
+    <img
+      src={book.cover}
+      alt="cover"
+      className="absolute top-0 left-0 object-cover w-full h-full rounded-t-xl"
+    />
+  )}
+</div>
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-800">
                   {book.title}
